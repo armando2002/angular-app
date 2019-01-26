@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   loaded: boolean = false;
   enableAdd: boolean = true;
   currentClasses = {};
+  currentStyles = {};
 
   constructor() { }
 
@@ -56,8 +57,6 @@ export class UsersComponent implements OnInit {
       ];
 
     this.loaded = true;
-
-    this.showExtended = true;
 /* 
     this.addUser({
       firstName: 'David',
@@ -65,6 +64,7 @@ export class UsersComponent implements OnInit {
     }); */
 
     this.setCurrentClasses();
+    this.setCurrentStyles();
   }
 
 addUser(user: User) {
@@ -75,6 +75,13 @@ setCurrentClasses() {
   this.currentClasses = {
     'btn-success': this.enableAdd,
     'big-text': this.showExtended
+  }
+}
+
+setCurrentStyles() {
+  this.currentStyles = {
+    'padding-top': this.showExtended ? '0' : '40px',
+    'font-size': this.showExtended ? '' : '40px'
   }
 }
 
