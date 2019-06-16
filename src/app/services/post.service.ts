@@ -29,10 +29,6 @@ export class PostService {
   }
 
   removePost(post: Post | number): Observable<Post> {
-<<<<<<< HEAD
-=======
-    // if what is passed in is a #, then use post, if not use the post id from the object
->>>>>>> 149cc4f54e4208505baa1c759b5557a5a38471a3
     const id = typeof post === 'number' ? post : post.id;
     const url = `${this.postsUrl}/${id}`;
 
